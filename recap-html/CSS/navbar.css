@@ -10,12 +10,12 @@ nav a:visited {
     text-decoration: none;
     color: #000;
 }
-.nav-left {
+nav .nav-left {
     /* flex: 1; */
     /* width: 50%; */
     display: flex;
 }
-.nav-right {
+nav .nav-right {
     /* flex: 1; */
     /* width: 50%; */
     display: flex;
