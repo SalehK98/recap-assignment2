@@ -1,19 +1,27 @@
 const items = [
     {
-        id: 1,
-        task: "buy milk",
-        done: false,
-        priority: 0,
-        dueDate: new Date
+      id: 1,
+      task: "buy milk",
+      done: false,
+      priority: 1,
+      dueDate: "2022-01-15",
     },
     {
-        id: 2,
-        task: "buy cake",
-        done: true,
-        priority: 1,
-        dueDate: new Date
-    }
-]
+      id: 2,
+      task: "buy cola",
+      done: true,
+      priority: 0,
+      dueDate: "2022-01-20",
+    },
+    {
+      id: 3,
+      task: "buy chocolate",
+      done: false,
+      priority: 3,
+      dueDate: "2022-02-05",
+    },
+  ];
+
 
 
 const chooseAction = () => {
@@ -43,9 +51,35 @@ const chooseAction = () => {
 chooseAction()
 
 
-const addItem = input => { // items.push(newTask)
+const addItem = (items, name, priority, date) => { // items.push(newTask)
+    const escapedName = name.replace(/[\u00A0-\u9999<>\&]/g, (i) => {
+        return "&#" + i.charCodeAt(0) + ";";
+    });
+    if (!escapedName.length) {
+        console.log("Error. Task name is empty or contain improper symbols.");
+        return -1;
+    }
+    if (!(Number.isInteger(priority) && priority >= 0)) {
+        console.log("Error. Task priority has an improper value.");
+        return -2;
+    }
+    if (!date.length || !str.find("/") || !str.find("-")) {
+        console.log("Error in the due date.");
+        return -3;
+    }
+    const id = Math.floor(Math.random() * 10000) + 1000;
+    const dueDate = new Date(date);
+    const task = {
+        id: id,
+        task: escapedName,
+        done: false,
+        priority,
+        dueDate: dueDate
+    };
+    items.push(task);
+    return task;
+}; // this accept arr and new item as par/
 
-} // this accept arr and new item as par/
 const markAsDone = input => {
     // id form user , array, state 
     // 
@@ -61,50 +95,22 @@ const displayItems = () => {
     console.log(items);
     let x = prompt("idd")
 }
-const sortBy = input => {
-    // array
-
-    /* function sortById() {
-  items.map(key => key.id);
-  return( sortById)   
-}
-function sortByDate() {
-    items.map(key => key.Date);
-    return( sortByDate)
-}
-function sortByPriority() {
-    items.map(key => key.priority);
-    return( sortByPriority)
-}
-function sortByTask() {
-    items.map(key => key.task);
-    return( sortByTask)
-}
-
-
-function sort(by) {
-    switch (by) {
-        case id:
-            sortById()
-            break;
-            case Date:
-                sortByDate()
-            break;
-
-            case priority:
-                sortByPriority()
-            break;
-            case task:
-                sortByTask()
-            break
-    
-        default:
-            console.log('not a category in the list')
-            break;
+const sortBy = (input) => {
+    if (input === "dueDate") {
+      items.sort((a, b) => new Date(a.date) - new Date(b.date));
+    } else if (input === "id") {
+      items.sort((a, b) => a.id-b.id);
+    } else if (input === "priority") {
+      items.sort((a, b) => a.priority - b.priority);
+    } else {
+      console.log("Invalid sort parameter!");
     }
-    
-} */
-}
+    console.log("List sorted!");
+  };
+  sortBy("dueDate");
+  console.log(items);
+
+
 const search = input => {
     // array 
     // searchTerm from user
