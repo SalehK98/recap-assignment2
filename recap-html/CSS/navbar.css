@@ -1,0 +1,40 @@
+nav {
+    margin-top: 27px;
+    height: 140px;
+    width: 800px;
+    margin-inline: auto;
+}
+nav a,
+nav a:hover,
+nav a:visited {
+    text-decoration: none;
+    color: #000;
+}
+nav .nav-left {
+    /* flex: 1; */
+    /* width: 50%; */
+    display: flex;
+}
+nav .nav-right {
+    /* flex: 1; */
+    /* width: 50%; */
+    display: flex;
+}
+
+nav #top-nav {
+    height: 50%;
+    display: flex;
+    justify-content: space-between;
+}
+
+nav #main-nav {
+    height: 50%;
+    display: flex;
+    justify-content: space-between;
+}
+
+nav #main-nav #menu {
+}
+nav #main-nav #menu {
+    display: flex;
+}
