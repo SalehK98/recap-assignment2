@@ -43,9 +43,28 @@ const chooseAction = () => {
 chooseAction()
 
 
-const addItem = input => { // items.push(newTask)
+const addItem = (items, name, priority, date) => { // items.push(newTask)
+    const escapedName = name.replace(/[\u00A0-\u9999<>\&]/g, (i) => {
+        return "&#" + i.charCodeAt(0) + ";";
+    });
+    if (!escapedName.length) {
+        console.log("Error. Task name is empty or contain improper symbols.");
+        return -1;
+    }
+    if (!(Number.isInteger(priority) && priority >= 0)) {
+        console.log("Error. Task priority has an improper value.");
+        return -2;
+    }
+    if (!date.length || !str.find("/") || !str.find("-")) {
+        console.log("Error in the due date.");
+        return -3;
+    }
+    const id = Math.floor(Math.random() * 10000) + 1000;
+    const date = new Date(date);
+    const task = {id: id, task: escapedName, done: false, priority, dueDate: date};
+    items.push(task);
+}; // this accept arr and new item as par/
 
-} // this accept arr and new item as par/
 const markAsDone = input => {
     // id form user , array, state 
     // 
