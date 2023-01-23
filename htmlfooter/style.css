@@ -1,0 +1,41 @@
+#footer{
+    align-items: flex-start;
+    justify-content: space-around;
+    display: flex;
+    height: 80vh;
+    line-height: 5vh;
+    border: 1px solid black;
+}
+#footer .logo{
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+#footer ul{
+    list-style: none;
+}
+#footer ul p{
+    color: rgb(141, 141, 141);
+    
+}
+#footer .img{
+    background-color: none;
+}
+#footer input{
+    height: 6vh;
+    margin: 0 8px 0 0;
+    padding: 2px;
+    border: 2px solid;
+    border-radius: 10%;
+}
+#footer button{
+    background-color: rgb(248, 74, 74);
+    color: #fff;
+    height: 7vh;
+    border-radius: 10%;
+    border: none;
+}
+.down{
+display: flex;
+align-items: flex-end;
+justify-content: center;
+}
