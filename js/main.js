@@ -1,12 +1,26 @@
 const items = [
     {
-        id: 1,
-        task: "buy milk",
-        done: false,
-        priority: 0,
-        dueDate: new Date
-    }
-]
+      id: 1,
+      task: "buy milk",
+      done: false,
+      priority: 1,
+      dueDate: "2022-01-15",
+    },
+    {
+      id: 2,
+      task: "buy cola",
+      done: true,
+      priority: 0,
+      dueDate: "2022-01-20",
+    },
+    {
+      id: 3,
+      task: "buy chocolate",
+      done: false,
+      priority: 3,
+      dueDate: "2022-02-05",
+    },
+  ];
 
 const chooseAction = () => {
 
@@ -26,50 +40,22 @@ const removeItem = input => {
 const displayItems = input => {
     // array 
 }
-const sortBy = input => {
-    // array
-
-    /* function sortById() {
-  items.map(key => key.id);
-  return( sortById)   
-}
-function sortByDate() {
-    items.map(key => key.Date);
-    return( sortByDate)
-}
-function sortByPriority() {
-    items.map(key => key.priority);
-    return( sortByPriority)
-}
-function sortByTask() {
-    items.map(key => key.task);
-    return( sortByTask)
-}
-
-
-function sort(by) {
-    switch (by) {
-        case id:
-            sortById()
-            break;
-            case Date:
-                sortByDate()
-            break;
-
-            case priority:
-                sortByPriority()
-            break;
-            case task:
-                sortByTask()
-            break
-    
-        default:
-            console.log('not a category in the list')
-            break;
+const sortBy = (input) => {
+    if (input === "dueDate") {
+      items.sort((a, b) => new Date(a.date) - new Date(b.date));
+    } else if (input === "id") {
+      items.sort((a, b) => a.id-b.id);
+    } else if (input === "priority") {
+      items.sort((a, b) => a.priority - b.priority);
+    } else {
+      console.log("Invalid sort parameter!");
     }
-    
-} */
-}
+    console.log("List sorted!");
+  };
+  sortBy("dueDate");
+  console.log(items);
+
+
 const search = input => {
     // array 
     // searchTerm from user
