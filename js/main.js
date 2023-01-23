@@ -60,9 +60,16 @@ const addItem = (items, name, priority, date) => { // items.push(newTask)
         return -3;
     }
     const id = Math.floor(Math.random() * 10000) + 1000;
-    const date = new Date(date);
-    const task = {id: id, task: escapedName, done: false, priority, dueDate: date};
+    const dueDate = new Date(date);
+    const task = {
+        id: id,
+        task: escapedName,
+        done: false,
+        priority,
+        dueDate: dueDate
+    };
     items.push(task);
+    return task;
 }; // this accept arr and new item as par/
 
 const markAsDone = input => {
