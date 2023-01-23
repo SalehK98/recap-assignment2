@@ -1,0 +1,23 @@
+nav {
+    margin-top: 27px;
+    height: 140px;
+    min-width: 1173px;
+    margin-inline: auto;
+}
+.nav-left {
+    width: 50%;
+}
+.nav-right {
+    width: 50%;
+}
+
+nav #top-nav {
+    height: 50%;
+}
+
+
+
+
+nav #main-nav {
+    height: 50%;
+}
