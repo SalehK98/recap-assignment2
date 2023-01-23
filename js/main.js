@@ -22,23 +22,71 @@ const items = [
     },
   ];
 
-const chooseAction = () => {
 
+
+const chooseAction = () => {
+    let choice = prompt("please choose an action:\n1- Add a Task\n2- Remove a task\n3- Display tasks\n4- Change task to done\n5- Search for a task")
+    console.log("");
+    if (choice != null) {
+        switch (choice) {
+            case "1":
+                let taskName = prompt("please enter the task's name")
+                let taskPriority = prompt("please enter the task's priority")
+                let taskDueDate = prompt("please enter the task's Due Date")
+                addItem(taskName, taskPriority, taskDueDate)
+            case "2":
+                items.forEach(el => console.log(el))
+                // displayItems()
+                let taskToRemove = prompt("please enter the task id")
+                const x = removeItem(1)
+
+            case "3":
+            case "4":
+            case "5":
+            case "6":
+        }
+    }
 }
 
+chooseAction()
 
-const addItem = input => { // items.push(newTask)
 
-} // this accept arr and new item as par/
+const addItem = (items, name, priority, date) => { // items.push(newTask)
+    const escapedName = name.replace(/[\u00A0-\u9999<>\&]/g, (i) => {
+        return "&#" + i.charCodeAt(0) + ";";
+    });
+    if (!escapedName.length) {
+        console.log("Error. Task name is empty or contain improper symbols.");
+        return -1;
+    }
+    if (!(Number.isInteger(priority) && priority >= 0)) {
+        console.log("Error. Task priority has an improper value.");
+        return -2;
+    }
+    if (!date.length || !str.find("/") || !str.find("-")) {
+        console.log("Error in the due date.");
+        return -3;
+    }
+    const id = Math.floor(Math.random() * 10000) + 1000;
+    const date = new Date(date);
+    const task = {id: id, task: escapedName, done: false, priority, dueDate: date};
+    items.push(task);
+}; // this accept arr and new item as par/
+
 const markAsDone = input => {
     // id form user , array, state 
     // 
 }
-const removeItem = input => {
+const removeItem = (input) => {
     // id from user, array
+    items.pop()
+    console.log(items);
 }
-const displayItems = input => {
+const displayItems = () => {
     // array 
+
+    console.log(items);
+    let x = prompt("idd")
 }
 const sortBy = (input) => {
     if (input === "dueDate") {
