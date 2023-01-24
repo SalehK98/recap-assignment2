@@ -1,5 +1,11 @@
-/* Roboto, Rubik fonts from Google */
-@import url("https://fonts.googleapis.com/css2?family=Roboto&family=Rubik&display=swap");
+/* Rubik fonts from Google */
+@import url("https://fonts.googleapis.com/css2?family=Rubik&display=swap");
+@font-face {
+    font-family: "Circular";
+    font-style: normal;
+    font-weight: 200;
+    src: url(../assets/fonts/CircularStd-Light.otf) format("opentype");
+}
 @font-face {
     font-family: "Circular";
     font-style: normal;
@@ -12,12 +18,20 @@
     font-weight: 700;
     src: url(../assets/fonts/CircularStd-Bold.otf) format("opentype");
 }
-
+header:has(nav) {
+    height: 1104px;
+    background: linear-gradient(
+        180deg,
+        #e9f8ff 0%,
+        #ffffff 53.14%,
+        #ffffff 100%
+    );
+}
 nav {
-    margin-top: 27px;
-    height: 140px;
-    width: 800px;
+    padding-top: 15px;
+    width: 80%;
     margin-inline: auto;
+    font: normal 400 18px/23px "Circular", "Roboto", sans-serif;
 }
 nav ul {
     list-style: none;
@@ -28,33 +42,119 @@ nav a:visited {
     text-decoration: none;
     color: #000;
 }
+nav *.btn,
+nav a.btn {
+    position: relative;
+    display: inline-block;
+    background: #ff3f3f;
+    border-radius: 8px;
+    padding: 12px 60px 20px;
+    color: #fff;
+}
+nav .sign-up::after {
+    content: ">";
+    position: absolute;
+    right: 25px;
+    top: 12px;
+    color: #fff;
+}
 nav .nav-left {
-    /* width: 50%; */
     display: flex;
+    align-items: center;
 }
 nav .nav-right {
-    /* width: 50%; */
     display: flex;
+    align-items: center;
 }
-
-nav #top-nav {
-    height: 50%;
+nav input,
+nav input::placeholder {
+    font-family: "Rubik", "Circular", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #000;
+}
+nav .icon {
+    display: inline-block;
+    vertical-align: middle;
+}
+nav .email-icon {
+    background-image: url(../assets/icons/email.svg);
+    width: 18px;
+    height: 18px;
+}
+nav .lang-icon {
+    background-image: url(../assets/icons/lang.svg);
+    width: 24px;
+    height: 28px;
+}
+nav .phone-icon {
+    background-image: url(../assets/icons/phone.svg);
+    width: 15px;
+    height: 15px;
+}
+nav .search-icon {
+    background-image: url(../assets/icons/search.svg);
+    width: 16px;
+    height: 15px;
+}
+nav #nav-top {
+    height: 70px;
     display: flex;
     justify-content: space-between;
-    /* flex-flow: wrap; */
+    margin-bottom: 20px;
+}
+nav #nav-top .nav-right {
+    font-family: "Rubik", "Circular", sans-serif;
+    gap: 40px;
+    padding-bottom: 10px;
+    padding-right: 8px;
+}
+nav #nav-top h1 {
+    font-size: 30px;
+    font-weight: 700;
+}
+nav #nav-top #search {
+    width: 242px;
+    border: 1px solid transparent;
+    border-bottom: 1px solid #000;
+    padding-bottom: 5px;
+}
+nav #nav-top #search input {
+    outline: none;
+    border: none;
+    background: transparent;
 }
 
-nav #main-nav {
-    height: 50%;
+nav #nav-main {
+    height: 70px;
+    padding: 10px 10px 10px 30px;
     display: flex;
     justify-content: space-between;
+    box-shadow: 0px -10px 20px rgba(0, 54, 110, 0.057595);
+    border-radius: 8px;
+    background: #fff;
 }
-
-nav #main-nav ul#menu {
+nav #nav-main ul#menu {
+    font: normal 400 20px/25px "Circular", "Roboto", sans-serif;
 }
-nav #main-nav ul#menu {
+nav #nav-main ul#menu {
     display: flex;
+    gap: 55px;
 }
-nav #main-nav ul#menu li {
-    padding-right: 20px;
+nav #nav-main ul#menu li .submenu {
+    position: relative;
+}
+nav #nav-main ul#menu li .submenu::after {
+    content: "";
+    background: url(../assets/icons/downarr.svg);
+    width: 11px;
+    height: 8px;
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: -23px;
+}
+nav #nav-main .nav-right {
+    align-items: center;
+    gap: 20px;
 }
