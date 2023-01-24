@@ -1,0 +1,94 @@
+/* Rubik fonts from Google */
+@import url("https://fonts.googleapis.com/css2?family=Rubik&display=swap");
+@font-face {
+    font-family: "Circular";
+    font-style: normal;
+    font-weight: 200;
+    src: url(../assets/fonts/CircularStd-Light.otf) format("opentype");
+}
+@font-face {
+    font-family: "Circular";
+    font-style: normal;
+    font-weight: 400;
+    src: url(../assets/fonts/CircularStd-Medium.otf) format("opentype");
+}
+@font-face {
+    font-family: "Circular";
+    font-style: normal;
+    font-weight: 700;
+    src: url(../assets/fonts/CircularStd-Bold.otf) format("opentype");
+}
+
+*:has(.middleBanner) {
+    position: relative;
+}
+
+.middleBanner {
+    font: normal 400 24px/31px "Rubik", "Circular", sans-serif;
+    min-height: 215px;
+    width: 80%;
+    background: #fff;
+    box-shadow: 0px 50px 100px rgba(8, 15, 21, 0.0749392);
+    border-radius: 10px;
+    padding: 20px 50px;
+
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 50%);
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 80px;
+}
+.middleBanner .circle-block {
+    flex: 1;
+}
+.middleBanner .circle-block .top {
+    margin-bottom: 20px;
+}
+.middleBanner .circle-block .top,
+.middleBanner .circle-block .bottom {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+.middleBanner .circle-block .top > *:first-child,
+.middleBanner .circle-block .bottom > *:first-child {
+    display: block;
+    flex: 0 0 53px;
+}
+.middleBanner .circle-block .top > *:last-child,
+.middleBanner .circle-block .bottom > *:last-child {
+    /* width: 53px; */
+}
+
+.middleBanner .circle-block .small-title {
+    font-size: 15px;
+    color: #000;
+    opacity: 0.26;
+    letter-spacing: 0.9375px;
+    text-transform: uppercase;
+}
+.middleBanner .circle-block .check-circle {
+    display: inline-block;
+    width: 53px;
+    height: 53px;
+    background: url(../assets/icons/check.svg) no-repeat center center;
+    border-radius: 50%;
+}
+.middleBanner .circle-block .check-circle.red {
+    background-color: #ff8282;
+}
+.middleBanner .circle-block .check-circle.blue {
+    background-color: #289fa3;
+}
+.middleBanner .circle-block .check-circle.yellow {
+    background-color: #fabd6e;
+}
+
+.middleBanner .circle-block .big-info {
+    font-size: 24px;
+    line-height: 30px;
+}
